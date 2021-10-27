@@ -1,0 +1,24 @@
+""" Calculator test"""
+from calculator.main import Calculator
+
+
+def test_calculator_add_static():
+    """testing calc result"""
+    assert Calculator.add_numbers(1, 2) == 3
+
+
+def test_calculator_add():
+    """Testing the Add function of the calc"""
+    # Arrange by instantiating the calc class
+    calc = Calculator()
+    # Act by calling the method to be tested
+    result_value = calc.add_numbers(1, 1)
+    # Assert that the results are correct
+    assert result_value == 2
+
+
+def test_calculator_subtract():
+    """Testing the subtract method of the calc"""
+    calc = Calculator()
+    calc.subtract_numbers(1, 2)
+    assert calc.subtract_numbers(1, 2) == -1
