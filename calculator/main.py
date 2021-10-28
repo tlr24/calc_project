@@ -1,6 +1,7 @@
 """ This is the increment function"""
 from calculator.operations.addition import Addition
 from calculator.operations.subtraction import Subtraction
+from calculator.operations.multiplication import Multiplication
 
 
 class Calculator:
@@ -15,3 +16,8 @@ class Calculator:
     def subtract_numbers(value_a, value_b):
         """ subtract number from result"""
         return Subtraction.subtract(value_a, value_b)
+
+    @staticmethod
+    def multiply_numbers(value_a, value_b):
+        """multiply number with result"""
+        return Multiplication.multiply(value_a, value_b)

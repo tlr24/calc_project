@@ -1,7 +1,7 @@
 """Addition Class"""
 
 
-class Addition: # pylint: disable=too-few-public-methods
+class Addition:  # pylint: disable=too-few-public-methods
     """Class for addition methods"""
 
     @staticmethod

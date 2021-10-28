@@ -22,3 +22,10 @@ def test_calculator_subtract():
     calc = Calculator()
     calc.subtract_numbers(1, 2)
     assert calc.subtract_numbers(1, 2) == -1
+
+
+def test_calculator_multiply():
+    """Testing the multiply method of the calc"""
+    calc = Calculator()
+    calc.multiply_numbers(4, 2)
+    assert calc.multiply_numbers(4, 2) == 8

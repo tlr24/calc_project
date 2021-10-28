@@ -1,7 +1,7 @@
 """Subtraction Class"""
 
 
-class Subtraction: # pylint: disable=too-few-public-methods
+class Subtraction:  # pylint: disable=too-few-public-methods
     """Class for subtraction methods"""
 
     @staticmethod
