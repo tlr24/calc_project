@@ -2,6 +2,7 @@
 from calculator.operations.addition import Addition
 from calculator.operations.subtraction import Subtraction
 from calculator.operations.multiplication import Multiplication
+from calculator.operations.division import Division
 
 
 class Calculator:
@@ -21,3 +22,8 @@ class Calculator:
     def multiply_numbers(value_a, value_b):
         """multiply number with result"""
         return Multiplication.multiply(value_a, value_b)
+
+    @staticmethod
+    def divide_numbers(value_a, value_b):
+        """Divide two numbers"""
+        return Division.divide(value_a, value_b)

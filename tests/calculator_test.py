@@ -29,3 +29,17 @@ def test_calculator_multiply():
     calc = Calculator()
     calc.multiply_numbers(4, 2)
     assert calc.multiply_numbers(4, 2) == 8
+
+
+def test_calculator_divide():
+    """Testing the divide method of the calc"""
+    calc = Calculator()
+    calc.divide_numbers(12, 3)
+    assert calc.divide_numbers(12, 3) == 4
+
+
+def test_calculator_divide_zero():
+    """Testing the divide method of calc for zero exception"""
+    calc = Calculator()
+    calc.divide_numbers(2, 0)
+    assert calc.divide_numbers(2, 0) is None
