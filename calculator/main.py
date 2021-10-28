@@ -1,4 +1,4 @@
-""" This is the increment function"""
+""" This is the main calculator program """
 from calculator.operations.addition import Addition
 from calculator.operations.subtraction import Subtraction
 from calculator.operations.multiplication import Multiplication
