@@ -46,6 +46,8 @@ class Calculator:
         return multiplication.get_result()
 
     @staticmethod
-    def divide_numbers(value_a, value_b):
-        """Divide two numbers"""
-        return Division.divide(value_a, value_b)
+    def divide_numbers(*args):
+        """Divide a list of numbers"""
+        division = Division(args)
+        Calculator.history.append(division)
+        return division.get_result()

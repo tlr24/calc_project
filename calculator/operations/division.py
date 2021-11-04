@@ -1,13 +1,15 @@
 """Division Class"""
+from calculator.operations.calculation import Calculation
 
 
-class Division:  # pylint: disable=too-few-public-methods
+class Division(Calculation):  # pylint: disable=too-few-public-methods
     """Class for division methods"""
-
-    @staticmethod
-    def divide(value_a, value_b):
-        """Dividing two values"""
+    def get_result(self):
+        """Get result of division"""
         try:
-            return value_a / value_b
+            quotient = self.values[0]
+            for value in self.values[1:]:
+                quotient /= value
+            return quotient
         except ZeroDivisionError:
             return None
