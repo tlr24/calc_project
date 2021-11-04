@@ -2,6 +2,41 @@
 from calculator.main import Calculator
 
 
+def test_clear_history():
+    """Testing clearing calculator history"""
+    Calculator.add_numbers(1, 1)
+    assert Calculator.clear_history() is True
+
+
+def test_get_calculation():
+    """Test getting a calculation from the history"""
+    Calculator.add_numbers(1, 2)
+    assert Calculator.get_calculation(0).get_result() == 3
+
+
+def get_calculation_last():
+    """Testing getting the last calculation in history"""
+    Calculator.add_numbers(2, 3)
+    assert Calculator.get_calculation_last().get_result == 5
+
+
+def test_count_calculations():
+    """Testing getting the number of calculations in history"""
+    Calculator.history.clear()
+    Calculator.add_numbers(2, 2)
+    Calculator.subtract_numbers(2, 2)
+    Calculator.multiply_numbers(2, 2)
+    assert Calculator.count_calculations() == 3
+
+
+def test_remove_calculation():
+    """Testing removing a specific calculation"""
+    Calculator.history.clear()
+    Calculator.add_numbers(2, 2)
+    Calculator.subtract_numbers(2, 2)
+    assert Calculator.remove_calculation(1) is True
+
+
 def test_calculator_add():
     """Testing the Add function of the calc"""
     assert Calculator.add_numbers(1, 1) == 2

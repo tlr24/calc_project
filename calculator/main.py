@@ -13,6 +13,7 @@ class Calculator:
     def clear_history():
         """Clear history of calculations"""
         Calculator.history.clear()
+        return True
 
     @staticmethod
     def get_calculation(num):
@@ -23,6 +24,17 @@ class Calculator:
     def get_calculation_last():
         """Get the last calculation in history"""
         return Calculator.history[-1]
+
+    @staticmethod
+    def count_calculations():
+        """Count the number of calculations in history"""
+        return len(Calculator.history)
+
+    @staticmethod
+    def remove_calculation(num):
+        """Remove a specific calculation"""
+        Calculator.history.remove(Calculator.history[num])
+        return True
 
     @staticmethod
     def add_numbers(*args):
