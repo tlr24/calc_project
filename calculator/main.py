@@ -7,11 +7,29 @@ from calculator.operations.division import Division
 
 class Calculator:
     """ This is the Calculator class"""
+    history = []
 
     @staticmethod
-    def add_numbers(value_a, value_b):
-        """ adds number to result"""
-        return Addition.add(value_a, value_b)
+    def clear_history():
+        """Clear history of calculations"""
+        Calculator.history.clear()
+
+    @staticmethod
+    def get_calculation(num):
+        """Get a calculation from the history"""
+        return Calculator.history[num]
+
+    @staticmethod
+    def get_calculation_last():
+        """Get the last calculation in history"""
+        return Calculator.history[-1]
+
+    @staticmethod
+    def add_numbers(*args):
+        """Adds a list of numbers"""
+        addition = Addition(args)
+        Calculator.history.append(addition)
+        return addition.get_result()
 
     @staticmethod
     def subtract_numbers(value_a, value_b):
