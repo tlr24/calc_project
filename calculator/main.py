@@ -32,9 +32,11 @@ class Calculator:
         return addition.get_result()
 
     @staticmethod
-    def subtract_numbers(value_a, value_b):
-        """ subtract number from result"""
-        return Subtraction.subtract(value_a, value_b)
+    def subtract_numbers(*args):
+        """Subtracts a list of numbers"""
+        subtraction = Subtraction(args)
+        Calculator.history.append(subtraction)
+        return subtraction.get_result()
 
     @staticmethod
     def multiply_numbers(value_a, value_b):
