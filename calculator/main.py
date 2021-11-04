@@ -39,9 +39,11 @@ class Calculator:
         return subtraction.get_result()
 
     @staticmethod
-    def multiply_numbers(value_a, value_b):
-        """multiply number with result"""
-        return Multiplication.multiply(value_a, value_b)
+    def multiply_numbers(*args):
+        """Multiply a list of numbers"""
+        multiplication = Multiplication(args)
+        Calculator.history.append(multiplication)
+        return multiplication.get_result()
 
     @staticmethod
     def divide_numbers(value_a, value_b):
