@@ -26,6 +26,11 @@ class Calculator:
         return Calculator.history[-1]
 
     @staticmethod
+    def get_calculation_last_result():
+        """Get the result of the last calculation in history"""
+        return Calculator.history[-1].get_result()
+
+    @staticmethod
     def count_calculations():
         """Count the number of calculations in history"""
         return len(Calculator.history)

@@ -14,10 +14,17 @@ def test_get_calculation():
     assert Calculator.get_calculation(0).get_result() == 3
 
 
-def get_calculation_last():
+def test_get_calculation_last():
     """Testing getting the last calculation in history"""
     Calculator.add_numbers(2, 3)
-    assert Calculator.get_calculation_last().get_result == 5
+    assert Calculator.get_calculation_last().get_result() == 5
+
+
+def test_get_calculation_last_result():
+    """Testing getting the result of the last calculation in history"""
+    Calculator.history.clear()
+    Calculator.add_numbers(2, 2)
+    assert Calculator.get_calculation_last_result() == 4
 
 
 def test_count_calculations():
