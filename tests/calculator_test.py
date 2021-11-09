@@ -1,5 +1,5 @@
 """ Calculator test"""
-from calculator.main import Calculator
+from calculator.calculator import Calculator
 
 
 def test_calculator_add():
