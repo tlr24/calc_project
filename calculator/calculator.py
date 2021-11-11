@@ -1,8 +1,4 @@
 """ This is the main calculator program """
-from calculator.operations.addition import Addition
-from calculator.operations.subtraction import Subtraction
-from calculator.operations.multiplication import Multiplication
-from calculator.operations.division import Division
 from calculator.history.calculations import Calculations
 
 
@@ -10,29 +6,30 @@ class Calculator:
     """ This is the Calculator class"""
 
     @staticmethod
-    def add_numbers(*args):
+    def get_last_result_value():
+        """ Get the result of the last calculation"""
+        return Calculations.get_calculation_last_result()
+
+    @staticmethod
+    def add_numbers(tuple_values: tuple):
         """Adds a list of numbers"""
-        addition = Addition(args)
-        Calculations.add_calculation(addition)
-        return addition.get_result()
+        Calculations.add_addition_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def subtract_numbers(*args):
+    def subtract_numbers(tuple_values: tuple):
         """Subtracts a list of numbers"""
-        subtraction = Subtraction(args)
-        Calculations.add_calculation(subtraction)
-        return subtraction.get_result()
+        Calculations.add_subtraction_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def multiply_numbers(*args):
+    def multiply_numbers(tuple_values: tuple):
         """Multiply a list of numbers"""
-        multiplication = Multiplication(args)
-        Calculations.add_calculation(multiplication)
-        return multiplication.get_result()
+        Calculations.add_multiplication_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def divide_numbers(*args):
+    def divide_numbers(tuple_values: tuple):
         """Divide a list of numbers"""
-        division = Division(args)
-        Calculations.add_calculation(division)
-        return division.get_result()
+        Calculations.add_division_calculation(tuple_values)
+        return True
