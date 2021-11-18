@@ -10,7 +10,7 @@ class Calculation:
 
     @classmethod
     def create(cls, values: tuple):
-        """ factory method"""
+        """Factory method"""
         return cls(values)
 
     @staticmethod

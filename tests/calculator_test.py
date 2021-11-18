@@ -1,4 +1,5 @@
 """ Calculator test"""
+import pytest
 from calculator.calculator import Calculator
 
 
@@ -34,4 +35,5 @@ def test_calculator_divide_zero():
     """Testing the divide method of calc for zero exception"""
     my_tuple = (2, 0)
     Calculator.divide_numbers(my_tuple)
-    assert Calculator.get_last_result_value() is None
+    with pytest.raises(ZeroDivisionError):
+        Calculator.get_last_result_value()

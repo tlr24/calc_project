@@ -14,8 +14,7 @@ def clear_history_fixture():
 def test_add_calculation_to_history():
     """Testing adding a calculation to history"""
     values = (1, 2)
-    addition = Addition(values)
-    Calculations.add_calculation(addition)
+    Calculations.add_addition_calculation(values)
     assert len(Calculations.history) == 1
 
 
