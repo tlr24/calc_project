@@ -9,7 +9,8 @@ def read_csv(path: str):
     # for i in range(len)
 
 test_dict = CsvReader.read_csv_dict('../tests/test_data/test_add_data.csv')
-CsvReader.parse_addition_dict(test_dict)
+CsvReader.parse_addition_df(test_dict)
+print("running")
 # read_csv('../tests/test_data/test_add_data.csv')
 # read_csv('../tests/test_data/test_subtract_data.csv')
 # read_csv('../tests/test_data/test_multiply_data.csv')
