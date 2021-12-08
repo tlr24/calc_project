@@ -1,5 +1,5 @@
 """Controller for the calculator"""
-from flask import render_template, request, flash #, redirect, url_for
+from flask import render_template, request, flash #, redirect, url_for, session
 from app.controllers.controller import ControllerBase
 from calculator.calculator import Calculator
 # pylint: disable=line-too-long
@@ -14,9 +14,7 @@ class CalculatorController(ControllerBase):
         if request.form['value1'] == '' or request.form['value2'] == '':
             error = 'You must enter a value for value 1 and or value 2'
         else:
-            flash('You successfully calculated')
-            flash('You are awesome')
-
+            flash('Successful calculation')
             # get the values out of the form
             value1 = request.form['value1']
             value2 = request.form['value2']
