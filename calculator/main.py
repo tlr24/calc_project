@@ -1,8 +1,16 @@
 """ This is the main program """
-from calculator.utilities.logger import Logger
+from calculator.utilities.csv_reader import CsvReader
+# from calculator.utilities.file_writer import FileWriter
 
-Logger.log_addition('../tests/test_data/test_add_data.csv', '../tests/logs/log_addition.csv')
-Logger.log_subtraction('../tests/test_data/test_subtract_data.csv', '../tests/logs/log_subtraction.csv')
-Logger.log_multiplication('../tests/test_data/test_multiply_data.csv', '../tests/logs/log_multiplication.csv')
-Logger.log_division('../tests/test_data/test_divide_data.csv', '../tests/logs/log_division.csv')
-print("running")
+def read_csv(path: str):
+    """Read csv files"""
+    csv = CsvReader.read_csv(path)
+    print(csv.to_string())
+    # for i in range(len)
+
+test_dict = CsvReader.read_csv_dict('../tests/test_data/test_add_data.csv')
+CsvReader.parse_addition_dict(test_dict)
+# read_csv('../tests/test_data/test_add_data.csv')
+# read_csv('../tests/test_data/test_subtract_data.csv')
+# read_csv('../tests/test_data/test_multiply_data.csv')
+# read_csv('../tests/test_data/test_divide_data.csv')
