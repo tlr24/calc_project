@@ -30,7 +30,7 @@ class CsvReader: # pylint: disable=too-few-public-methods,pointless-string-state
                 print(addition_dict[i][j])
                 if j != "total":
                     num_list.append(addition_dict[i][j])
-            Calculator.add_numbers(tuple(num_list))
+            Calculator.addition(tuple(num_list))
             output_string += str(datetime.utcnow().timestamp()) + ',' + str(Calculator.get_last_result_value()) + '\n'
         FileWriter.write_to_file('tests/test_data/test.csv', output_string)
         return output_string
