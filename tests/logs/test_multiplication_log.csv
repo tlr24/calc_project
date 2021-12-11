@@ -1,0 +1,11 @@
+result,time,filename,recordNumber,operation
+2.0,1639182177.576436,test_multiply_data.csv,1,multiplication
+6.0,1639182177.576699,test_multiply_data.csv,2,multiplication
+12.0,1639182177.576863,test_multiply_data.csv,3,multiplication
+20.0,1639182177.576997,test_multiply_data.csv,4,multiplication
+30.0,1639182177.577129,test_multiply_data.csv,5,multiplication
+42.0,1639182177.57726,test_multiply_data.csv,6,multiplication
+56.0,1639182177.577389,test_multiply_data.csv,7,multiplication
+72.0,1639182177.577549,test_multiply_data.csv,8,multiplication
+90.0,1639182177.577703,test_multiply_data.csv,9,multiplication
+110.0,1639182177.577832,test_multiply_data.csv,10,multiplication

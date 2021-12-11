@@ -1,0 +1,11 @@
+result,time,filename,recordNumber,operation
+2.0,1639182177.611989,test_divide_data.csv,1,division
+3.0,1639182177.612181,test_divide_data.csv,2,division
+3.3333333333333335,1639182177.612335,test_divide_data.csv,3,division
+3.5,1639182177.612507,test_divide_data.csv,4,division
+3.6,1639182177.612662,test_divide_data.csv,5,division
+3.6666666666666665,1639182177.612812,test_divide_data.csv,6,division
+3.7142857142857144,1639182177.612963,test_divide_data.csv,7,division
+3.75,1639182177.613112,test_divide_data.csv,8,division
+3.7777777777777777,1639182177.61326,test_divide_data.csv,9,division
+3.8,1639182177.61341,test_divide_data.csv,10,division

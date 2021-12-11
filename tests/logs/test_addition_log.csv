@@ -1,0 +1,11 @@
+result,time,filename,recordNumber,operation
+3.0,1639182177.433217,test_add_data.csv,1,addition
+5.0,1639182177.433432,test_add_data.csv,2,addition
+7.0,1639182177.433628,test_add_data.csv,3,addition
+9.0,1639182177.433776,test_add_data.csv,4,addition
+11.0,1639182177.433921,test_add_data.csv,5,addition
+13.0,1639182177.434062,test_add_data.csv,6,addition
+15.0,1639182177.434203,test_add_data.csv,7,addition
+17.0,1639182177.434382,test_add_data.csv,8,addition
+19.0,1639182177.434585,test_add_data.csv,9,addition
+21.0,1639182177.434742,test_add_data.csv,10,addition
