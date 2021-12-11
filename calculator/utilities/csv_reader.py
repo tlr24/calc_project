@@ -11,3 +11,11 @@ class CsvReader: # pylint: disable=pointless-string-statement,consider-using-enu
         csv = pd.read_csv(ap.absolute_path(path))
         data_frame = pd.DataFrame(csv)
         return data_frame
+
+    @staticmethod
+    def read_csv_dict(path: str):
+        """Read the csv and return as a dictionary"""
+        csv = pd.read_csv(ap.absolute_path(path))
+        data_frame = pd.DataFrame(csv)
+        return data_frame.to_dict('records')
+    
