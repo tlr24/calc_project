@@ -1,0 +1,136 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>OOP Glossary</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  p {
+		text-align: left;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	  }
+	  code {
+		display: inline-block;
+		background: #f2f2f2;
+		border: 1px solid #d1d2d3;
+		padding: 0px 4px;
+		margin-right: 4px;
+		border-radius: 4px;
+		color: #697A89;
+	  }
+    </style>
+
+
+  </head>
+  <!--<body class="d-flex text-center text-white bg-dark">-->
+
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="px-3"><br>
+	<h1><h1 style="text-align: center;">OOP Glossary</h1><br>
+	<p> OOP or object-oriented programming uses many concepts including:
+	Factory, instantiation, object, class, namespace, constructor, fixture, type hint, type cast, unit test, static, class method, facade, method, property, linting, etc.
+	</p> <br><br>
+    <p>
+	<b>pylint</b> - Pylint is a tool used to catch errors in python code development as well as to make sure that python code reaches the PEP8 python standards of how and in what style python code should be written.<br><br>
+	More information about how to install and implement pylint for your development environment can be found here: <a href="https://pylint.org/">https://pylint.org/</a>.<br><br>
+	More information on the PEP8 standards and style guide can be found here: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>.<br><br>
+	
+    <b>factory</b> - A factory makes objects instead of just instantiating them. This helps centralize object creation.<br><br>
+	An example of a factory method in our calculator program is in the calculation class on line 12 where we make a create function that always takes the first parameter of the class to instantiate as an object. 
+	It also takes in the tuple used in the <code>__init__</code> function (line 7) to instantiate the object with the values established in the constructor method.
+	<img src="{{ url_for('static', filename='images/create.jpg') }}" alt="calculation.py" class="center" style="width:100%;"><br>
+	<b><i>Note:</b></i> The full calculation class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py</a>.<br><br>
+    
+	<b>instantiation</b> - Instantiation is creating an instance of a class. When an object is instantiated, it inherits all of the data and methods from the class.<br><br>
+    
+	<b>object</b> - An object is an instance of a class. It is a copy of the class as the class is the blueprint while an object actually carries the properties and methods. <br><br>
+    
+	<b>class</b> - A class is a blueprint or an outline used to instantiate objects. It defines the data and functions to be instantiated with the object.<br>
+	A class in python can be defined using the following syntax: <code>class SampleClass:</code><br><br>
+    
+	<b>namespace</b> - A namespace is a collection of names of objects including properties and methods. Namespaces help define the scope of the names within a class. <br><br>
+	For example, we can have different <code>get_result()</code> methods in both the <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/addition.py">addition.py</a> and <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/subtraction.py">subtraction.py</a> classes that can be used within the scope of their namespaces or scripts using the same name for different purposes.<br><br>
+    
+	<b>constructor</b> - A constructor is a method that gets called to instantiate an object. In python, the constructor method is created with the <code>__init__</code> function.<br><br>
+	An example of an <code>__init__</code> constructor method can be found in our calculation.py class. The constructor method can be called to instantiate a calculation object by calling the following line: <code>Calculation()</code>
+    <img src="{{ url_for('static', filename='images/init.jpg') }}" alt="calculation.py" class="center" style="width:100%;"><br>
+	<b><i>Note:</b></i> The full calculation class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py</a>.<br><br>
+	
+	<b>fixture</b> - Fixtures define the steps and data that constitute the arrange phase of a test.<br><br>
+	An example of a fixture in the calculator program is in <a href="https://github.com/tlr24/calc_project/blob/main/tests/calculations_history_test.py">calculations_history_test.py</a>:
+	<img src="{{ url_for('static', filename='images/fixture.jpg') }}" alt="calculations_history_test.py" class="center" style="width:100%;"><br>
+	This fixture is used in the parameters of history test functions to clear the history while testing the calculation history functions with different calculation objects added to the history list.<br><br>
+    
+	<b>type hint</b> - Type hinting is a way to statically hint or indicate the type of value passed within Python code. Example below on line 7.<br><br>
+	<img src="{{ url_for('static', filename='images/calculation.py.jpg') }}" alt="calculation.py" class="center" style="width:100%;"><br>
+    <b><i>Note:</b></i> The full calculation class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py</a>.<br><br>
+	
+	<b>type cast</b> - Type casting is converting one data type to another. An example is in the calculation class below on line 21 where the value is being converted to a float from its original type.
+	<br><img src="{{ url_for('static', filename='images/calculation.py.jpg') }}" alt="calculation.py" class="center" style="width:100%;"><br>
+    <b><i>Note:</b></i> The full calculation class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py</a>.<br><br>
+    
+	<b>unit test</b> - A unit test is a testing method that tests small, individual units of code to make sure they function properly as expected. Unit tests help isolate where code may be broken to identify issues and fix programs quickly and efficiently.<br><br>
+    
+	<b>static method</b> - Static methods are utility functions that are there to do actions and calculations. They do not take up memory. They help for usability. <br><br>
+    An example of a static method in our calculator program is the <code>clear_history()</code> method in <a href="https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py">calculations.py</a>.<br><br>
+	<img src="{{ url_for('static', filename='images/clear_history.jpg') }}" alt="calculations.py" class="center" style="width:50%;"><br>
+	The clear history method is utility that is only used to clear the calculations history data. It does not need to store any of the data in the class, it just needs to perform a static function every time it is called.<br><br>
+	
+	<b>class method</b> - A class method is a method that is bound to the class. It does not rely on a class instance, like a static method, however, class methods do take a parameter of class (the first parameter) that refers to the overall class itself. Unlike a static method, it deals with the class and its properties.<br><br>
+    An example of a class method in our calculator program is the factory method in <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">calculation.py</a>. In python, class methods must include the <code>@classmethod</code> decorator above the function signature.<br><br>
+	<img src="{{ url_for('static', filename='images/just_create.jpg') }}" alt="calculation.py" class="center" style="width:50%;"><br>
+	
+	<b>facade</b> - A facade is a design pattern used to hide the complexities of a program by providing an interface for the client to use.
+	An example of a facade would be the calculator class. The calculator class imports from the Calculations class which imports from the operation classes.
+	This way, the calculator because a simple interface for users to use as it hides all the complexities found in calculation.py, addition.py, subtraction.py, multiplication.py, calculations.py, etc.<br>
+	<br><img src="{{ url_for('static', filename='images/calculator.py.jpg') }}" alt="calculator.py" class="center" style="width:100%;"><br><br>
+        
+	<b>method</b> - A method is a function or a block of code that runs when called. Methods are useful in object-oriented programming as they allow for code reusability. Methods in python can be defined using the <code>def</code> keyword.<br><br>
+	The calculator program uses methods in almost every python script. Methods are defined using the following format called a method signature: <code>def example_function(parameters):</code><br><br>
+	The <b>method signature</b> includes the defined method name and parameters.<br><br>
+	<b><i>Note:</b></i> The full calculator program can be viewed here: <a href="https://github.com/tlr24/calc_project">https://github.com/tlr24/calc_project</a>.<br><br>
+    
+	<b>property</b> - A property is an interface to an attribute of an object or class. Properties hold data of an object. Property methods allow us to get, set, and delete attributes of an object defined in a class, making it easier to work with the data within its scope.<br><br>
+	
+	<a href="https://github.com/tlr24/calc_project" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Full Calculator Repo</a>
+    </p></h1>
+    <br>
+
+  </main>
+
+</div>
+
+
+    
+  <!--</body>-->
+</html>
+{% endblock %}

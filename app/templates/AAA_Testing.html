@@ -1,0 +1,110 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>AAA Testing</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  p {
+		text-align: left;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	  }
+	  code {
+		display: inline-block;
+		background: #f2f2f2;
+		border: 1px solid #d1d2d3;
+		padding: 0px 4px;
+		margin-right: 4px;
+		border-radius: 4px;
+		color: #697A89;
+	  }
+    </style>
+
+
+  </head>
+  <!--<body class="d-flex text-center text-white bg-dark">-->
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+  <main class="px-3">
+    <br><h1><h1 style="text-align: center;">AAA Testing</h1>
+	AAA is a pattern of testing that helps determine whether the functions in a program are working as expected. Testing is important because it helps us pinpoint problem areas in our code in development before deploying problematic code. It also allows us to keep track of where code breaks as APIs change and new code is added later on.<br>
+	To start, AAA stands for Arrange, Act, and Assert.
+	<br><br>Our calculator program includes tests for each function based on the AAA testing pattern discussed below. <br><br><br>
+	<p>For this article, we will be using the following function, <code>add_numbers()</code>, found in <a href="https://github.com/tlr24/calc_project/blob/main/calculator/calculator.py">calculator.py</a> for testing using the AAA testing pattern:</p>
+	<img src="{{ url_for('static', filename='images/add_numbers.jpg') }}" alt="calculator.py" class="center" style="width:75%;"><br>
+	<b><p class="lead">ARRANGE</p></b> <br>
+	<p>
+    <b>Arranging</b> is the process of arranging the inputs and targets needed to set up for the test cases. In order to test the functionality of a basic unit of code, we need to make sure we have the necessary operations, settings and/or variables set up and prepped.<br><br>
+    In our example function from the calculator class, the arranging step should look like this:<br><br>
+	<code>my_tuple = (1, 1)</code><br><br>
+	Here, we are arranging a tuple for the <code>add_numbers()</code> method as it takes in a tuple of numbers to add. We need to have a tuple of numbers to add to make sure we can test the functionality.
+	<br><br><br></p>
+	<b><p class="lead">ACT</p> </b> <br>
+	<p>
+    The <b>Act</b> stage is where we call the function to be tested. This is typically a function or method call as in this case, we are testing a method. The action is called so we can target whether it is behaving correctly or not in the next step. <br><br>
+	In our example, we would be calling the <code>add_numbers()</code> function that we are testing like this:<br><br>
+	<code>Calculator.add_numbers(my_tuple)</code>
+	<br><br><br></p>
+	<b><p class="lead">ASSERT</p> </b> <br>
+	<p>
+    Lastly, the <b>Assert</b> stage is where we write an assert statement to make sure we get our expected outcome as a result of our function call. The assert function verifies that we received the correct response for the behavior and it lets us determine if the test passes or fails. <br><br>
+	In our example, we would call the following <b>assert</b> statement to make sure that the last calculation result value is 2 as is expected of adding the numbers we fed the function in the arrange stage:<br><br>
+	<code>assert Calculator.get_last_result_value() == 2</code> <br><br><br>
+	If we run this test (using pylint) we should be able to see if our function passes the test and whether or not it functions as we expect it to. This helps us narrow down issues in our code and makes sure that every unit of code in our program functions properly.
+	Each function in a program should have a test function starting with the name starting with 'test_' in order for us to run pytest and see if our code works as expected.<br><br>
+	You can learn more about pytest here: <a href="https://docs.pytest.org/en/6.2.x/contents.html">https://docs.pytest.org/en/6.2.x/contents.html</a>.<br><br>
+	AAA testing helps us do basic unit testing and feature testing following the behavior-driven development concept of Given-When-Then. <br><br>
+	You can learn more about AAA testing here: <a href="https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/">https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/</a>.<br><br>
+	Here is the final test function for our <code>add_numbers()</code> method:<br><br>
+	<img src="{{ url_for('static', filename='images/test_add_numbers.jpg') }}" alt="calculator_test.py" class="center" style="width:75%;"><br>
+	The full calculator_test.py script can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/tests/calculator_test.py">https://github.com/tlr24/calc_project/blob/main/tests/calculator_test.py</a>
+	<br><br><br></p>
+	<b><p class="lead">USING EXTERNAL DATA</p> </b> <br>
+	<p>
+	In python, we can use external data in our code using <b>pandas</b>, a data analysis and manipulation tool. Pandas allows us to read external files to use their data in our unit and feature tests.<br><br>
+	An example of reading using external data in our calculator program can be found in csv_reader.py:<br><br>
+	<img src="{{ url_for('static', filename='images/csv_reader.jpg') }}" alt="csv_reader.py" class="center" style="width:100%;"><br>
+	You can view the full csv_reader.py script here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/utilities/csv_reader.py">https://github.com/tlr24/calc_project/blob/main/calculator/utilities/csv_reader.py</a>.<br><br>
+	You can view the full csv_reader_test.py script to see how to use the external data in testing here: <a href="https://github.com/tlr24/calc_project/blob/main/tests/csv_reader_test.py">https://github.com/tlr24/calc_project/blob/main/tests/csv_reader_test.py</a>.<br><br>
+	You can learn more about pandas here: <a href="https://pandas.pydata.org/">https://pandas.pydata.org/</a>.
+	<br><br><br><br></p>
+	
+    </h1></h1>
+
+  </main>
+</div>
+
+
+    
+  <!--</body>-->
+</html>
+{% endblock %}
