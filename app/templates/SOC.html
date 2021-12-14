@@ -1,0 +1,85 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>SoC</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  p {
+		text-align: left;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	  }
+	  code {
+		display: inline-block;
+		background: #f2f2f2;
+		border: 1px solid #d1d2d3;
+		padding: 0px 4px;
+		margin-right: 4px;
+		border-radius: 4px;
+		color: #697A89;
+	  }
+    </style>
+
+
+  </head>
+  <!--<body class="d-flex text-center text-white bg-dark">-->
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  
+  <main class="px-3"><br>
+	<h1><h1 style="text-align: center;">Separation of Concerns</h1><br>
+	<p>Separation of concerns (SoC) is the design concept in which each concern in the code is given its distinct section in the code.
+	</p> <br>
+    <p>
+    In coding, a <b>concern</b> is a distinct behavior that a unit of code in a script or program has to perform. 
+	Therefore, each concern in the program must be in a separate section, typically in a separate method. Each method in a script should perform its own independent task. Methods should have <b><i>one and only one</i> job</b>. <br><br>
+	The design principle of SoC is important in coding as it allows us to have a clear code that is divided into small, manageable pieces. This way, it easier to work with each small unit of code as you don't need to know much about it besides the one task it is designed to accomplish.<br><br>
+	An example of the use of SoC in our calculator program is in <a href="https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py">calculations.py</a>:<br><br>
+	<img src="{{ url_for('static', filename='images/calculations.py.jpg') }}" alt="calculations.py" class="center" style="width:100%;"><br>
+	Here we can see how each method only accomplishes one task or concern. We can see that there is an <code>add_calculation()</code> method that <i>only</i> adds a calculation to history, a <code>clear_history()</code> method that <i>only</i> clears the history, a <code>count_calculations()</code> method that <i>only</i> returns the number of calculations in history, and etc.<br><br>
+	These methods only accomplish the one job they are assigned to do and nothing else and therefore are broken into small, manageable pieces of code. Each of the methods are indepedent and are used together in order to build up our calculator program.<br><br>
+	Overall, applying SoC allows us to have short segments of code with clear intent, making them easier to write, understand, use, and fix.<br><br>
+	<b><i>Note:</b></i> The full Calculations class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py">https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py</a>.<br><br>
+    
+	You can learn more about separation of concerns here: <a href="https://livebook.manning.com/book/code-like-a-pro/chapter-2/1">https://livebook.manning.com/book/code-like-a-pro/chapter-2/1</a>.<br><br>
+		
+    </p></h1>
+    <br>
+
+  </main>
+
+</div>
+
+
+    
+  <!--</body>-->
+</html>
+{% endblock %}

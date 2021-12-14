@@ -1,0 +1,124 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>OOP Principles</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  p {
+		text-align: left;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+	  }
+	  code {
+		display: inline-block;
+		background: #f2f2f2;
+		border: 1px solid #d1d2d3;
+		padding: 0px 4px;
+		margin-right: 4px;
+		border-radius: 4px;
+		color: #697A89;
+	  }
+    </style>
+
+
+  </head>
+  <!--<body class="d-flex text-center text-white bg-dark">-->
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  
+  <main class="px-3">
+    <br><h1><h1 style="text-align: center;">OOP Principles in Calculator program</h1>
+	<p> OOP or object-oriented programming is a model of programming that designs software around the organization of objects and data rather than functions and logic. Our calculator program is written based on the 4 core OOP principles discussed below.</p> <br>
+	<b><p class="lead">ENCAPSULATION</p></b> <br>
+	<p>
+    Encapsulation is the idea that describes wrapping attributes and behavior into a class.
+	Objects are instances of a class. When an object is instantiated, it encapsulates its variables and functions from the class into a single unit.
+	Typically, variables in a class are set to private and can only be modified by public functions that can be used outside the class in order to avoid accidental change of the variables. <br><br>
+    An example of encapsulation in our calculator program is in our calculations class:<br><br>
+	<img src="{{ url_for('static', filename='images/calculations.py.jpg') }}" alt="calculations.py" class="center" style="width:100%;"><br>
+	<b><i>Note:</b></i> The full calculations class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py">https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py</a> (Full script not shown here).<br><br><br>
+	In our example, we can see that we create a Calculations class on line 8. On line 11, we give our Calculations class a list variable names history to store our calcuation history.
+	We also define several methods including <code>add_calculation()</code> (line 14), <code>clear_history()</code> (line 20), <code>get_calculation()</code>(line 26), and <code>remove_calculation()</code> (line 36) that modify our history variable by appending, clearing, returning, and removing from it.
+	When a Calculations object is instantiated from the Calculations class, it acts as a single unit that encapsulates the history variable and all of its functions that can alter the history variable.
+	<br><br><br></p>
+	<b><p class="lead">INHERITANCE</p></b> <br>
+	<p>
+    Inheritance allows us to define a class that inherits the data and behavior from another class. The class that is being inherited from is called the <b>parent</b> or base class. The class that is inheriting from the parent class is called the <b>child</b> class. <br><br>
+	An example of inheritance in our calculator program is in the Calculation and Addition classes. 
+	The Calculation class acts as the parent/base class. <br>
+	<img src="{{ url_for('static', filename='images/calculation.py.jpg') }}" alt="calculation.py" class="center" style="width:100%;"><br>
+	The Addition, Subtraction, Multiplication, and Division classes all inherit the properties and methods from the Calculation class.
+	<img src="{{ url_for('static', filename='images/addition.py.jpg') }}" alt="addition.py" class="center" style="width:100%;"><br>
+	As seen when defining the Addition class (line 5), the Addition class inherits from the Calculation class (likewise in the other operation classes). 
+	This means that the Addition class inherits the values property, <code>__init__</code> method, <code>create</code> factory method, and <code>convert_args_to_list_float</code> method. 
+	As seen on line 10 of the Addition class, the <code>get_result</code> method is able to read from the self.values property that is inherited from the Calculation class in the Addition class. <br><br>
+	Inheritance allows for re-usability of code as it allows derived classes to add new features on top of a base class.<br><br>
+	<b><i>Note:</b></i> The full Calculation class can be viewed here: <a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py">https://github.com/tlr24/calc_project/blob/main/calculator/operations/calculation.py</a>.
+	All of the operation classes can be viewed here: <a href="https://github.com/tlr24/calc_project/tree/main/calculator/operations">https://github.com/tlr24/calc_project/tree/main/calculator/operations</a>.
+	<br><br><br></p>
+	<b><p class="lead">POLYMORPHISM</p></b> <br>
+	<p>
+    Polymorphism is the ability to use a common interface for multiple forms of data types.<br><br>
+    An example of polymorphism in our calculator program is in our operation scripts: addition.py, substraction.py, multiplication.py, division.py.<br> 
+	Let's first look at addition.py<br><br>
+	<img src="{{ url_for('static', filename='images/addition.py.jpg') }}" alt="addition.py" class="center" style="width:100%;"><br>
+	Here we can see there the addition class inherits from the Calculation class. In the addition class, a method of <code>get_result()</code> is defined.<br><br>
+	Now let's look at the subtraction.py<br>
+	<img src="{{ url_for('static', filename='images/subtraction.py.jpg') }}" alt="subtraction.py" class="center" style="width:100%;"><br>
+	Here we see that there is a subtraction class defined that also inherits from the Calculation class. It also defines the same method called <code>get_result()</code>, however, it is getting the result for a different type of calculation: subtraction.
+	This is an example of polymorphism where we use the same interface for different objects to make the code more efficient.<br><br>
+	<b><i>Note:</b></i> All of the operation classes can be viewed here: <a href="https://github.com/tlr24/calc_project/tree/main/calculator/operations">https://github.com/tlr24/calc_project/tree/main/calculator/operations</a>.
+	<br><br><br></p>
+	<b><p class="lead">ABSTRACTION</p> </b> <br>
+	<p>
+    Abstraction focuses on hiding the internal implementations of a process or method from the user. <br><br>
+	An example of abstraction in our calculator program is found in the calculator class. 
+	In the calculator class, there are simple methods for basic calculator operations including <code>add_numbers</code>, <code>subtract_numbers</code>, <code>multiple_numbers</code>, and <code>divide_numbers</code>. <br><br>
+	<img src="pictures/abstract.jpg" alt="abstract" class="center" style="width:100%;"><br>
+	The actual code that does all the calculating for these methods is hidden behind the <code>add_addition_calculation</code> (etc.) methods found in the Calculations class which then inherits all the Addition, Subtraction, etc. classes that contain the methods with the actual code to do the calculations. <br><br>
+	<a href="https://github.com/tlr24/calc_project/blob/main/calculator/history/calculations.py">Calculations.py</a>: <img src="{{ url_for('static', filename='images/abstractCalculations.jpg') }}" alt="abstractCalculations" class="center" style="width:100%;"><br>
+	<a href="https://github.com/tlr24/calc_project/blob/main/calculator/operations/addition.py">Addition.py</a>: <img src="{{ url_for('static', filename='images/addition.py.jpg') }}" alt="addition.py" class="center" style="width:100%;"><br>
+	The user only needs to call <code>add_numbers</code> to do their addition calculation as the actual code is hidden from them in the Addition class. 
+	Abstraction makes it easier for the user to use the calculator interface with the easy calculation methods that hides the real code behind the operation. <br><br>
+	<a href="https://github.com/tlr24/calc_project" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Full Calculator Repo</a>
+	<br><br><br></p>
+	
+    </h1></h1>
+
+  </main>
+
+</div>
+
+
+    
+  <!--</body>-->
+</html>
+{% endblock %}
