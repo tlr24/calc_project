@@ -2,6 +2,7 @@
 from flask import Flask
 from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
+from app.controllers.history_controller import HistoryController
 # pylint: disable=line-too-long, no-else-return
 
 app = Flask(__name__)
@@ -21,3 +22,8 @@ def calculator_get():
 def calculator_post():
     """Post to the Calculator page with the Calculator Controller"""
     return CalculatorController.post()
+
+@app.route("/history", methods=['GET'])
+def history_get():
+    """Get the history table page from the History Controller"""
+    return HistoryController.get()

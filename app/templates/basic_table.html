@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Result</th>
+        <th>File Name</th>
+        <th>Record Number</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in data %}
+        <tr>
+          <td>{{ record['time'] }}</td>
+          <td>{{ record['result'] }}</td>
+          <td>{{ record['filename'] }}</td>
+          <td>{{ record['recordNumber'] }}</td>
+          <td>{{ record['operation'] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
