@@ -6,7 +6,7 @@ from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
 from app.controllers.history_controller import HistoryController
 from app.controllers.article_controller import ArticleController
-# pylint: disable=line-too-long, no-else-return
+# pylint: disable=line-too-long, no-else-return, pointless-string-statement
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -58,10 +58,12 @@ def history_get():
     """Get the history table page from the History Controller"""
     return HistoryController.get()
 
+'''
 @app.route("/api/data", methods=['GET'])
 def history_data_get():
     """Get the history table data from the History Controller"""
     return HistoryController.get_data()
+    '''
 
 @app.route("/clear", methods=['GET'])
 def clear_get():
