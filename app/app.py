@@ -1,6 +1,7 @@
 """A simple flask web app"""
 from flask import Flask
 #from flask_sqlalchemy import SQLAlchemy
+from werkzeug.debug import DebuggedApplication
 from app.controllers.index_controller import IndexController
 from app.controllers.calculator_controller import CalculatorController
 from app.controllers.history_controller import HistoryController
@@ -9,7 +10,9 @@ from app.controllers.article_controller import ArticleController
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-'''app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
+'''
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -54,6 +57,11 @@ def calculator_post():
 def history_get():
     """Get the history table page from the History Controller"""
     return HistoryController.get()
+
+@app.route("/api/data", methods=['GET'])
+def history_data_get():
+    """Get the history table data from the History Controller"""
+    return HistoryController.get_data()
 
 @app.route("/aaa_testing", methods=['GET'])
 def aaa_testing_get():

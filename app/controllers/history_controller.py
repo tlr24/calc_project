@@ -10,5 +10,11 @@ class HistoryController(ControllerBase):
     @staticmethod
     def get():
         """Gets data from test addition log and returns to basic_table.html"""
-        data_dict = CsvReader.read_csv_dict('tests/logs/test_addition_log.csv')
+        data_dict = CsvReader.read_csv_dict('calculator/results/history.csv')
         return render_template('basic_table.html', data=data_dict)
+
+    @staticmethod
+    def get_data():
+        """Method to get data for ajax"""
+        data_dict = CsvReader.read_csv_dict('calculator/results/history.csv')
+        return {'data': data_dict}

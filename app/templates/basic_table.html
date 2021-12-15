@@ -1,27 +1,52 @@
 {% extends "base.html" %}
-
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+</head>
 {% block content %}
 <h1 style="text-align: center;">History</h1>
   <table id="data" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Time</th>
-        <th>Result</th>
-        <th>File Name</th>
-        <th>Record Number</th>
-        <th>Operation</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for record in data %}
+    {% if data is defined and data|length > 0 %}
+      <thead>
         <tr>
-          <td>{{ record['time'] }}</td>
-          <td>{{ record['result'] }}</td>
-          <td>{{ record['filename'] }}</td>
-          <td>{{ record['recordNumber'] }}</td>
-          <td>{{ record['operation'] }}</td>
+          <th>Value 1</th>
+          <th>Value 2</th>
+          <th>Result</th>
+          <th>Operation</th>
+          <th>Time</th>
         </tr>
-      {% endfor %}
-    </tbody>
+      </thead>
+      <tbody>
+        {% for record in data %}
+          <tr>
+            <td>{{ record['value1'] }}</td>
+            <td>{{ record['value2'] }}</td>
+            <td>{{ record['result'] }}</td>
+            <td>{{ record['operation'] }}</td>
+            <td>{{ record['time'] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    {% else %}
+      <br><p class="lead" style="text-align: center;">No calculation history yet.</p></br> <br>
+    {% endif %}
   </table>
+{% endblock %}
+<!--
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        columns: [
+          {data: 'value1'},
+          {data: 'value2', searchable: false},
+          {data: 'result', orderable: false, searchable: false},
+          {data: 'operation', orderable: false, searchable: false},
+          {data: 'time'}
+        ],
+      });
+    });
+  </script>
+  -->
 {% endblock %}

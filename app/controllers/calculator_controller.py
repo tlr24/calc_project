@@ -2,6 +2,7 @@
 from flask import render_template, request, flash #, redirect, url_for, session
 from app.controllers.controller import ControllerBase
 from calculator.calculator import Calculator
+from calculator.utilities.logger import Logger
 # pylint: disable=line-too-long
 
 
@@ -24,6 +25,7 @@ class CalculatorController(ControllerBase):
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
             result = str(Calculator.get_last_result_value())
+            getattr(Logger, "log_" + operation)(value1, value2, 'calculator/results/history.csv')
             return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
         return render_template('calculator2.html', error=error)
 
