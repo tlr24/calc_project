@@ -5,3 +5,9 @@
 .ash_history
 __pycache__
 .coverage
+exceptions.csv
+test.csv
+test_addition_log.csv
+test_subtraction_log.csv
+test_multiplication_log.csv
+test_division_log.csv
