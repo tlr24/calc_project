@@ -1,5 +1,6 @@
-# My Calculator Program
-[![Build Status](https://app.travis-ci.com/tlr24/calc_project.svg?branch=main)](https://app.travis-ci.com/tlr24/calc_project)  
-## Added table to get history results:
-![image](https://user-images.githubusercontent.com/70588311/145663050-92fc2b6e-8723-4eec-b998-ed2127b30311.png)  
-![image](https://user-images.githubusercontent.com/70588311/145664089-6a156eaf-b27c-45e2-a810-fee8490997ff.png)  
+# My Calculator Program - Project 3 - Talaar Rastguelenian
+[![Build Status](https://app.travis-ci.com/tlr24/calc_project.svg?branch=main)](https://app.travis-ci.com/tlr24/calc_project)   
+## Passed pytest
+![image](https://user-images.githubusercontent.com/70588311/146261891-cad665b9-662b-4bfc-b0b0-4865e64d1574.png)  
+## Demonstration Video  
+https://user-images.githubusercontent.com/70588311/146273229-acf113ef-57e3-49ee-9e01-75e8dfc2cd35.mp4  
