@@ -9,8 +9,8 @@ from calculator.utilities.file_writer import FileWriter
 def test_csv_fixture(): # pylint: disable=redefined-outer-name,unused-argument,consider-using-with,line-too-long
     """A fixture that will run each time you pass it to a test to generate a test csv history file to read from"""
     path = 'tests/test_data/test_logger.csv'
-    test_data = "value1,value2,result,operation,time\n"
-    FileWriter.write_to_file(path, test_data)
+    test_data = {'value_1': [], 'value_2': [], 'result': [], 'operation': [],'time': []}
+    FileWriter.write_csv(path, test_data)
 
 def test_parse_calculation_to_dict(): # pylint: disable=redefined-outer-name,unused-argument
     """Testing parsing each row of a data frame into a dictionary"""

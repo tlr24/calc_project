@@ -9,8 +9,8 @@ from calculator.utilities.file_writer import FileWriter
 def add_test_csv_fixture(): # pylint: disable=redefined-outer-name,unused-argument,consider-using-with
     """A fixture that will run each time you pass it to a test to read csv files"""
     path = 'tests/test_data/test_csv_reader.csv'
-    test_data = "value_1,value_2,total\n1,2,3\n2,3,5"
-    FileWriter.write_to_file(path, test_data)
+    test_data = {'value_1': [1, 2], 'value_2':[2, 3], 'total': [3, 5]}
+    FileWriter.write_csv(path, test_data)
 
 def test_read_csv(add_test_csv_fixture): # pylint: disable=redefined-outer-name,unused-argument
     """Testing reading csv files as data frames"""

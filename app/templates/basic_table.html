@@ -4,7 +4,23 @@
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 </head>
 {% block content %}
-<h1 style="text-align: center;">History</h1>
+<br><h1 style="text-align: center;">History</h1>
+<div style="text-align: center;">
+  <a href="/clear" class="btn btn-sm btn-secondary fw-bold border-dark bg-dark" >Clear History</a>
+</div>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-3" style="text-align: center">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="alert alert-success" role="alert">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+    </main>
+</div>
   <table id="data" class="table table-striped">
     {% if data is defined and data|length > 0 %}
       <thead>

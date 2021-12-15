@@ -7,6 +7,8 @@
     </style>
 {% endblock %}
 {% block content %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-3" style="text-align: center"><br>
     <h1>Calculation Result</h1>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -21,5 +23,6 @@
     <strong>Value 2: </strong> {{ value2 }} <br>
     <strong>Operation: </strong> {{ operation }} <br>
     <strong>Result: </strong> {{ result }}
-
+    </main>
+</div>
 {% endblock %}

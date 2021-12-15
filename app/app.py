@@ -63,6 +63,11 @@ def history_data_get():
     """Get the history table data from the History Controller"""
     return HistoryController.get_data()
 
+@app.route("/clear", methods=['GET'])
+def clear_get():
+    """Get the cleared history page from the History Controller"""
+    return HistoryController.get_clear_data()
+
 @app.route("/aaa_testing", methods=['GET'])
 def aaa_testing_get():
     """Get the AAA testing article from the Article Controller"""
